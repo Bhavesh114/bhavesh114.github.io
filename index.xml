@@ -6,9 +6,19 @@
     <description>Recent content on Bhavesh&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Sun, 04 Jul 2021 16:18:16 +0530</lastBuildDate>
     
 	<atom:link href="https://bhavesh114.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NewBlog</title>
+      <link>https://bhavesh114.github.io/posts/newblog/</link>
+      <pubDate>Sun, 04 Jul 2021 16:18:16 +0530</pubDate>
+      
+      <guid>https://bhavesh114.github.io/posts/newblog/</guid>
+      <description>asrdaesd</description>
+    </item>
     
   </channel>
 </rss>
