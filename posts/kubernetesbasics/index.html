@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<title>KubernetesBasics | Bhavesh&#39;s Blog</title>
+<meta charset="utf-8">
+<meta name="generator" content="Hugo 0.68.3" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://bhavesh114.github.io/css/index.css">
+<link rel="canonical" href="https://bhavesh114.github.io/posts/kubernetesbasics/">
+<link rel="alternate" type="application/rss+xml" href="" title="Bhavesh&#39;s Blog">
+
+<header>
+  
+    <a href="https://bhavesh114.github.io/" class="title">Bhavesh&#39;s Blog</a>
+  
+  
+</header>
+
+<article>
+  <header>
+    <h1>KubernetesBasics</h1>
+    <time datetime="2021-07-04T16:20:58&#43;05:30">July 04, 2021</time>
+  </header>
+  <h1 id="what-is-kubernetes"><strong>What is Kubernetes?</strong></h1>
+<p>Kubernetes is an open source container orchestration platform that ease your life by automating many manual processing like deploying, scaling and managing containerized applications.</p>
+<p>So in foundation k8 managed containers that can be docker or any other technologies.
+Which means k8 helps you manage applications that are made up of hundreds of containers.</p>
+<p>Simply put you can break down an application into hundreds or thousands of microservices and deploy them on cloud using k8. Managing these thousands of tools using scripts and self-made tools can be really hectic or even impossible. That is where k8 comes in and manage all the microservices/containers for you.</p>
+<h1 id="what-features-do-k8-offers"><strong>What features do k8 offers?</strong></h1>
+<ul>
+<li>Hing Availability</li>
+<li>Scalability</li>
+<li>Disaster recovery</li>
+</ul>
+<h1 id="kubernetes-components"><strong>Kubernetes Components</strong></h1>
+<p>Let&rsquo;s start with the basic components of k8 to get you started using k8.</p>
+<h3 id="node"><strong>Node</strong></h3>
+<p>A Node is a worker machine in Kubernetes and may be either a virtual or a physical machine, depending on the cluster. So once you have a node on your cluster you can start deploying pods on it.</p>
+<h3 id="pod"><strong>Pod</strong></h3>
+<p>Pods are the smallest, most basic deployable objects in Kubernetes. Pod creates an abstract layer over a container such as docker container. It creates a running environment on top of the container.</p>
+<p>The reason why k8 creates a layer over a container is to abstract the container so that one can replace the container with no effect on the pod and also because we don&rsquo;t have to directly work with the container technology that may be docker or any other we use in k8.</p>
+<p>In simpler terms pod run our docker images in cloud. We deploy a pod with our image in it and k8 take cares if that image.</p>
+<pre><code>Note: Pods are usually meant to run one application container inside of it.
+</code></pre><h3 id="service"><strong>Service</strong></h3>
+<p>Each pod gets its own internal IP address to communicate with each other. The issue arises as the pPods are ephemeral. Which means they can die very easily and when that happens for whatever reason, K8 will generate a same pod for us, but the internal IP of the new pod will get new IP address.</p>
+<p>This is where service e comes in. Service is basically a static IP address that can be attached to each pod. So now if the pod dies, the service will still be there hence the endpoint will still be the same.</p>
+<pre><code>Note: If the pods attached to service dies and a replica is created for the same, K8 will assign all the related components to the new pod. That means even when the pod dies and new pod is created it will still have the same static id as before.
+</code></pre><p>There are two types of services:</p>
+<ul>
+<li>External Service</li>
+<li>Internal Service</li>
+</ul>
+<h4 id="external-service"><strong>External Service</strong></h4>
+<p>Now we want your application to be accessible from a browser. For this we create an external service. So, an external service opens communication from external sources.</p>
+<h4 id="internal-service"><strong>Internal Service</strong></h4>
+<p>We would not want our database to be accessible from external sources. That is when we create an internal service. This is a type of service we specify while crating one.</p>
+<h3 id="ingress"><strong>Ingress</strong></h3>
+<p>When we need to access our application from a browser we would type in something like this &ldquo;http://external-serice-IP-address/port&rdquo; but this is not what we want as an end product.</p>
+<p>This is where ingress comes in. So instead of service a request first goes to ingress and this component of K8 forward the request accordingly.</p>
+
+</article>
+
+
+
+</html>
